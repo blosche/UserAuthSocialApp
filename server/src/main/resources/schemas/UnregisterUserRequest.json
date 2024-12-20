@@ -1,0 +1,21 @@
+{
+    "$id": "https://example.com/address.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "unregister",
+    "description": "User Detail Object For DeleteUserRequest",
+    "type": "object",
+    "properties": {
+      "username": {
+        "description": "Username of user to be deleted",
+        "type": "string"
+      },
+      "requestType": {
+        "description": "the object type should be unregister",
+        "type": "string",
+        "pattern": "^unregister$"
+      }
+    },
+    "required":["username","requestType" ],
+    "additionalProperties": false
+  }
+  

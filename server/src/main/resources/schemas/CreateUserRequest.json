@@ -1,0 +1,29 @@
+{
+    "$id": "https://example.com/address.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "CreateUserRequest",
+    "description": "User Detail Object For CreateUserRequest",
+    "type": "object",
+    "properties": {
+      "username": {
+        "description": "Username of new user",
+        "type": "string"
+      },
+      "password": {
+        "description": "Password of new user",
+        "type": "string"
+      },
+      "email": {
+        "description": "Email of new user",
+        "type": "string"
+      },
+      "requestType": {
+        "description": "the object type should be create",
+        "type": "string",
+        "pattern": "^create$"
+      }
+    },
+    "required":["username", "password", "email"],
+    "additionalProperties": false
+  }
+  

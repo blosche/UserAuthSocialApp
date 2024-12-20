@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "7a119328-e08f-4ae0-bb2d-6515c0ab6a98",
+		"name": "config",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "30727524-7a119328-e08f-4ae0-bb2d-6515c0ab6a98"
+	},
+	"item": [
+		{
+			"name": "base",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3917ed3f-9b04-4033-8254-6823c35d756d",
+						"exec": [
+							"pm.test(\"Response is HTTP200 status\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Server-side team name is correct\", () => {",
+							"    const response = pm.response.json();",
+							"pm.collectionVariables.set(\"TEAM_NAME\", \"t63 The Pawn Shop\");",
+							"    const expectedTeamName = pm.collectionVariables.get(\"TEAM_NAME\");",
+							"    pm.expect(response.serverName).to.eql(expectedTeamName);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "40ea6c9f-fe49-4325-aac1-a2f13d74cc90",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"requestType\": \"config\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/config",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"config"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "bee34078-af05-4e1b-9e8a-df0f0506785f",
+			"key": "TEAM_NAME",
+			"value": ""
+		}
+	]
+}

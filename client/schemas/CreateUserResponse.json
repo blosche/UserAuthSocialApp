@@ -1,0 +1,32 @@
+{
+    "$id": "https://example.com/address.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "user",
+    "description": "create user response",
+    "type": "object",
+    "properties": {
+      "requestType": {
+        "description":"the TIP object type should be register",
+        "type":"string",
+        "pattern":"^create$"
+      },      
+      "username": {
+        "description": "Username of new user",
+        "type": "string"
+      },
+      "password": {
+        "description": "Password of new user",
+        "type": "string"
+      },
+      "email": {
+        "description": "Email of new user",
+        "type": "string"
+      },
+      "responseStatus":{
+        "description":"whether or not the action requested was succesful or not",
+        "type": "string"
+      }
+    },
+    "required":["responseStatus", "requestType"],
+    "additionalProperties": false
+  }
